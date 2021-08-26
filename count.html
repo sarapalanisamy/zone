@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click counter</title>
+    <link rel="stylesheet" href="count.css" type="">
+    <script>
+      var count = 0;
+      function incrementClick() {
+      updateDisplay(++count);
+      }
+      function resetCounter() {
+       count = 0;
+        updateDisplay(count);
+     }
+      function updateDisplay(val) {
+       document.getElementById("count-label").innerHTML = val;
+      } 
+    </script>
+</head>
+<body>
+   <div class="main" >
+     <h1 >count the balls</h1>
+   </div>
+   <div>
+   <img style="justify-items: center;"
+    src="https://th.bing.com/th/id/OIP.iaciKh8MkCBvySo5xBfaJwHaHa?pid=ImgDet&w=183&h=183&c=7&dpr=1.56"
+    alt=""
+    />
+  </div>
+</body>
+<h3><center style="font-size: 15px; font-style: italic;">with the help two button .find the total values</center></h3>
+<div>
+    <center><h3 id="count-label">0 </h3></center>
+</div>
+
+   <center>   
+    <div class="button" style="display: inline;">
+        <button onclick="incrementClick()" type="button" >Click Me</button> 
+        <br>
+        <br>
+        <button onclick="resetCounter()"> Reset</button>
+    </div>
+ </center>
+    
+</html>
+
