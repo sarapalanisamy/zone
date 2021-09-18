@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>to do list</title>
+<link rel="https://fonts.googleapis.com/icon?family=Material+Icons" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/
+4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+<style>
+</style>
+</head>
+<body>
+
+<div class="">
+<h1 class="">TO DO LISTS</h1>
+<div class="">
+<input type="text" id="name" placeholder="Add Name......">
+<button class="btn" id="addNameButton">ADD</button>
+</div>
+<div class="">
+  <ul id="listOfName"></ul>
+  </div>
+</div>
+</div>
+<script>
+   var givenName = document.querySelector('#name')
+   var btnClass = document.querySelector('#addNameButton')
+   var listOfName = document.querySelector('#listOfName')
+   btnClass.addEventListener('click', () => {
+      var actualName = givenName.value
+      if (actualName.length != 0) {
+         var createAnHTMLList = `<li class="Material-icons">${actualName}&nbsp&nbsp&nbsp&nbsp<i class="Material-icons"
+         onclick="removeNameFromTheList(this)">delete</i>`
+         listOfName.innerHTML += createAnHTMLList
+         givenName.value = ''
+         givenName.classList.remove('red')
+      } else{
+         givenName.classList.add('red')
+      }
+   })
+   function removeNameFromTheList(e) {
+      e.parentElement.remove()
+   }
+</script>
+</body>
+</html>
